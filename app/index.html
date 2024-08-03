@@ -29,6 +29,7 @@
     <link href="asset/img/favicon.ico" rel="icon" type="image/x-icon" /><!-- Libraries -->
     <link href="styles.css" rel="stylesheet" />
 </head>
+
 <!-- - - - S E P E R A T O R - - - -->
 
 <body>
@@ -45,8 +46,13 @@
                 <button class="navbutton" onclick="scrollToTop(); showSection('section1')">Bots</button>
                 <button class="navbutton" onclick="scrollToTop(); showSection('section2')">Build</button>
                 <button class="navbutton" onclick="scrollToTop(); showSection('section3')">Alts</button>
-                <button class="navbutton" onclick="scrollToTop(); showSection('section6')">Goon</button>
+                <button class="navbutton" onclick="scrollToTop(); showSection('section4')">Login</button>
+            </nav>
+            <nav class="navbar">
                 <button class="navbutton" onclick="scrollToTop(); showSection('section5')">Prem</button>
+                <button class="navbutton" onclick="scrollToTop(); showSection('section7')">Bot-Gen</button>
+                <button class="navbutton" onclick="scrollToTop(); showSection('section9')">Img-Gen</button>
+                <button class="navbutton" onclick="scrollToTop(); showSection('section8')">Donate</button>
             </nav>
         </div>
     </header>
@@ -140,6 +146,8 @@
                     <input type="submit" value="Create Bot"><br>
                 </form>
             </div>
+            <hr><br> <button class="navbutton" onclick="scrollToTop(); showSection('section5')">Unlock Advanced Mode And NSFW</button>
+
         </section>
         <!-- - - - S E P E R A T O R - - - -->
         <section class="section" id="section3">
@@ -246,17 +254,185 @@
         </section>
         <!-- - - - S E P E R A T O R - - - -->
         <section class="section" id="section5">
+            <h1 class="title">For 1 Month Unlimited Use</h1>
+            <br />
+            <hr />
             <div class="container">
-                <h1 class="title">For 1 Month Unlimited Use</h1>
-                <br />
-                <hr />
-                <div class="container">
-                    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-                    <stripe-pricing-table pricing-table-id="prctbl_1OdLs5InwOtn0CbOmddLNyPJ" publishable-key="pk_live_51OSClNInwOtn0CbOobf5THlBYKycWx2tEithKC5dm9qTQ7Dx77BrjGf9pjRULHanVf8mHwVjllXbAGi1eCDHae7D00aMMWDL7f">
-                    </stripe-pricing-table>
-                </div>
+                <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+                <stripe-pricing-table pricing-table-id="prctbl_1OdLs5InwOtn0CbOmddLNyPJ" publishable-key="pk_live_51OSClNInwOtn0CbOobf5THlBYKycWx2tEithKC5dm9qTQ7Dx77BrjGf9pjRULHanVf8mHwVjllXbAGi1eCDHae7D00aMMWDL7f">
+                </stripe-pricing-table>
             </div>
         </section>
+        <!-- - - - S E P E R A T O R - - - -->
+        <section class="section" id="section9">
+            <div class="container">
+                <style>
+                    body {
+                        background: black;
+                        padding: 0px;
+                    }
+
+                    .iframe-container {
+                        position: fixed;
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                    }
+
+                    .iframe-container iframe {
+                        position: absolute;
+                        height: 800px;
+                        width: 100%;
+                        border: 5px solid black;
+                    }
+                </style>
+                <div class="iframe-container">
+                    <iframe src="https://deepai.org/machine-learning-model/text2img" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="container">
+                <script>
+                    prediction = $(
+                        curl--silent--show - error https: //api.replicate.com/v1/predictions \
+                        --request POST\
+                        --header "Authorization: Bearer $r8_PS1nP8PDt7tB4mIbxCE4r2OkuIsrqYu3haGTQ"\
+                        --header "Content-Type: application/json"\
+                        --data @ - << -EOM {
+                            "version": "5c347a4bfa1d4523a58ae614c2194e15f2ae682b57e3797a5bb468920aa70ebf",
+                            "stream": true,
+                            "input": {
+                                "prompts": "Manhattan skyline at sunset. #artstation 🌇"
+                            }
+                        }
+                        EOM
+                    )
+                    stream_url = $(printf "%s"
+                        "$prediction" | jq - r.urls.stream)
+                    curl--silent--no - buffer "$stream_url"\
+                        --header "Accept: text/event-stream"
+                        --header "Cache-Control: no-store"
+                </script>
+            </div>
+        </section>
+        <!-- - - - S E P E R A T O R - - - -->
+        <section class="section" id="section7">
+            <div class="container">
+                <button id="generate-male" class="navbutton">Generate Male Bot</button>
+                <button id="generate-female" class="navbutton">Generate Female Bot</button>
+            </div>
+            <div id="bot-gen"></div>
+            <br>
+            <hr><br> <button class="navbutton" onclick="scrollToTop(); showSection('section5')">Unlock Custom Generations 🔓
+            </button>
+        </section>
+        <!-- - - - S E P E R A T O R - - - -->
+        <section class="section" id="section8">
+            <div class="container">
+                <button id="donate" class="navbutton">Donate</button>
+            </div>
+            <div id="bot-gen"></div>
+            <br>
+            <hr><br> <button class="navbutton" onclick="scrollToTop(); showSection('section5')">Unlock Custom Generations 🔓
+            </button>
+        </section>
+
+        <script>
+            class CharacterBot {
+                constructor(gender, name, eyeColor, hairColor, height, weight, skinTone, accent, physique, physicalTraits, mentalTraits, randomTraits, negativeTraits, turnOns, turnOffs, fetishes) {
+                    this.gender = gender;
+                    this.name = name;
+                    this.eyeColor = eyeColor;
+                    this.hairColor = hairColor;
+                    this.height = height;
+                    this.weight = weight;
+                    this.skinTone = skinTone;
+                    this.accent = accent;
+                    this.physique = physique;
+                    this.physicalTraits = physicalTraits;
+                    this.mentalTraits = mentalTraits;
+                    this.randomTraits = randomTraits;
+                    this.negativeTraits = negativeTraits;
+                    this.turnOns = turnOns;
+                    this.turnOffs = turnOffs;
+                    this.fetishes = fetishes;
+                }
+                toString() {
+                    return `Gender: ${this.gender}\n` +
+                        `Name: ${this.name}\n` +
+                        `Eye Color: ${this.eyeColor}\n` +
+                        `Hair Color: ${this.hairColor}\n` +
+                        `Height: ${this.height}\n` +
+                        `Weight: ${this.weight}\n` +
+                        `Skin Tone: ${this.skinTone}\n` +
+                        `Accent: ${this.accent}\n` +
+                        `Physique: ${this.physique}\n` +
+                        `Physical Traits: ${this.physicalTraits.join(', ')}\n` +
+                        `Mental Traits: ${this.mentalTraits.join(', ')}\n` +
+                        `Random Traits: ${this.randomTraits.join(', ')}\n` +
+                        `Negative Traits: ${this.negativeTraits.join(', ')}\n` +
+                        `Turn-Ons: ${this.turnOns.join(', ')}\n` +
+                        `Turn-Offs: ${this.turnOffs.join(', ')}\n` +
+                        `Fetishes: ${this.fetishes.join(', ')}`;
+                }
+            }
+            const maleNames = ["John", "Michael", "David", "Chris", "James", "Robert", "Daniel", "Paul", "Mark", "Thomas", "Jake", "Ryan", "Brandon", "Tyler", "Nick", "Matt", "Kevin", "Jason", "Aaron", "Steve"];
+            const femaleNames = ["Sarah", "Jessica", "Emily", "Sophia", "Olivia", "Emma", "Ava", "Isabella", "Mia", "Amelia", "Ashley", "Brittany", "Amanda", "Taylor", "Megan", "Rachel", "Lauren", "Hannah", "Kayla", "Kelsey"];
+            const eyeColors = ["blue", "green", "brown", "hazel", "gray", "amber", "violet", "red"];
+            const hairColors = ["blonde", "brown", "black", "red", "gray", "white", "blue", "pink", "green", "purple"];
+            const heights = ["4'10\"", "5'0\"", "5'2\"", "5'4\"", "5'6\"", "5'8\"", "5'10\"", "6'0\"", "6'2\"", "6'4\"", "6'6\"", "6'8\"", "7'0\""];
+            const weights = ["90 lbs", "100 lbs", "110 lbs", "120 lbs", "130 lbs", "140 lbs", "150 lbs", "160 lbs", "170 lbs", "180 lbs", "190 lbs", "200 lbs", "210 lbs", "220 lbs"];
+            const skinTones = ["fair", "light", "medium", "olive", "brown", "dark", "alabaster", "ebony", "peach", "golden"];
+            const accents = ["American", "British", "Australian", "Canadian", "Irish", "Scottish", "Indian", "South African", "New Zealand", "French", "Italian", "Spanish", "German", "Russian", "Chinese", "Japanese"];
+            const physiques = ["slim", "athletic", "average", "muscular", "stocky", "plump", "toned", "scrawny", "burly", "petite"];
+            const physicalTraits = ["strong", "flexible", "stamina", "agility", "coordination", "reflexes", "endurance", "balance", "speed", "dexterity", "graceful", "nimble", "steady hands", "good posture", "good eyesight", "good hearing", "strong immune system", "good teeth", "thick hair", "clear skin", "freckles", "dimples", "piercings", "tattoos", "bald", "curly hair"];
+            const mentalTraits = ["intelligent", "creative", "logical", "analytical", "focused", "patient", "strategic", "quick thinker", "problem solver", "innovative", "wise", "perceptive", "curious", "philosophical", "calm under pressure", "memory", "emotional intelligence", "self-discipline", "adaptable", "thoughtful", "dreamer", "witty", "sarcastic", "empathetic", "manipulative"];
+            const randomTraits = ["musical", "artistic", "good cook", "dancer", "polyglot", "good storyteller", "tech-savvy", "fashionable", "good with animals", "gardener", "athletic", "good driver", "handy", "adventurous", "good with kids", "social butterfly", "charismatic", "humorous", "collector", "traveler", "gamer", "geek", "nerdy", "party animal", "bookworm"];
+            const negativeTraits = ["arrogant", "impatient", "lazy", "selfish", "moody", "disorganized", "irritable", "stubborn", "reckless", "gullible", "impulsive", "obsessive", "jealous", "pessimistic", "critical", "insecure", "forgetful", "grumpy", "easily distracted", "awkward", "neurotic", "cynical", "judgmental", "rude", "clumsy"];
+            const turnOns = ["confidence", "sense of humor", "intelligence", "kindness", "physical fitness", "adventurousness", "spontaneity", "romantic gestures", "cooking skills", "good hygiene", "tattoos", "piercings", "nice smile", "good kisser", "dominance", "submissiveness", "creativity", "good dancer", "playfulness", "flirtatiousness"];
+            const turnOffs = ["bad breath", "arrogance", "laziness", "rudeness", "selfishness", "poor hygiene", "bad manners", "clinginess", "negativity", "lack of ambition", "disorganization", "ignorance", "jealousy", "dishonesty", "disrespect", "loudness", "gossiping", "drunkenness", "indecisiveness", "vanity"];
+            const fetishes = ["BDSM", "foot fetish", "role-playing", "voyeurism", "exhibitionism", "bondage", "spanking", "dirty talk", "uniforms", "age play", "medical play", "pet play", "cross-dressing", "impact play", "sensory deprivation", "public sex", "threesomes", "group sex", "swinging", "cuckolding"];
+
+            function getRandomElement(arr) {
+                return arr[Math.floor(Math.random() * arr.length)];
+            }
+
+            function getRandomElements(arr, count) {
+                const shuffled = arr.sort(() => 0.5 - Math.random());
+                return shuffled.slice(0, count);
+            }
+
+            function generateCharacter(gender) {
+                const name = getRandomElement(gender === "Male" ? maleNames : femaleNames);
+                const eyeColor = getRandomElement(eyeColors);
+                const hairColor = getRandomElement(hairColors);
+                const height = getRandomElement(heights);
+                const weight = getRandomElement(weights);
+                const skinTone = getRandomElement(skinTones);
+                const accent = getRandomElement(accents);
+                const physique = getRandomElement(physiques);
+                const physicalTraitsSelected = getRandomElements(physicalTraits, 6);
+                const mentalTraitsSelected = getRandomElements(mentalTraits, 6);
+                const randomTraitsSelected = getRandomElements(randomTraits, 6);
+                const negativeTraitsSelected = getRandomElements(negativeTraits, 6);
+                const turnOnsSelected = getRandomElements(turnOns, 3);
+                const turnOffsSelected = getRandomElements(turnOffs, 3);
+                const fetishesSelected = getRandomElements(fetishes, 3);
+                return new CharacterBot(gender, name, eyeColor, hairColor, height, weight, skinTone, accent, physique, physicalTraitsSelected, mentalTraitsSelected, randomTraitsSelected, negativeTraitsSelected, turnOnsSelected, turnOffsSelected, fetishesSelected);
+            }
+
+            function displayCharacter(character) {
+                const container = document.getElementById('bot-gen');
+                container.innerHTML = `<pre>${character.toString() }</pre>`;
+            }
+            document.getElementById('generate-male').addEventListener('click', () => {
+                const character = generateCharacter("Male");
+                displayCharacter(character);
+            });
+            document.getElementById('generate-female').addEventListener('click', () => {
+                const character = generateCharacter("Female");
+                displayCharacter(character);
+            });
+        </script>
         <!-- - - - S E P E R A T O R - - - -->
         <section class="section" id="section6">
 
@@ -394,14 +570,18 @@
     <!-- - - - S E P E R A T O R - - - -->
     <footer>
         <div class="spacer"></div>
-        <div class="seperator"></div>
         <div class="nav-container">
             <nav class="navbar">
                 <button class="navbutton" onclick="scrollToTop(); showSection('section1')">Bots</button>
                 <button class="navbutton" onclick="scrollToTop(); showSection('section2')">Build</button>
                 <button class="navbutton" onclick="scrollToTop(); showSection('section3')">Alts</button>
-                <button class="navbutton" onclick="scrollToTop(); showSection('section6')">Goon</button> </button>
+                <button class="navbutton" onclick="scrollToTop(); showSection('section4')">Login</button>
+            </nav>
+            <nav class="navbar">
                 <button class="navbutton" onclick="scrollToTop(); showSection('section5')">Prem</button>
+                <button class="navbutton" onclick="scrollToTop(); showSection('section7')">Bot-Gen</button>
+                <button class="navbutton" onclick="scrollToTop(); showSection('section9')">Img-Gen</button>
+                <button class="navbutton" onclick="scrollToTop(); showSection('section8')">Donate</button>
             </nav>
         </div>
         <div class="grid-container">
@@ -423,8 +603,6 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
         <script src="script.js"></script>
-        <script src="//code.tidio.co/hv8jlamna7la3xa5fnerni2uabctnxk4.js" async></script>
-
         <div class="spacer">😉 🤖 😊 🤖 🥶 😒 😆 🫥 🤖 🥺 🤖<button class="hidden-button" onclick="scrollToTop(); showSection('section6')">💦</button> 😝</div>
     </footer>
     <!-- - - - S E P E R A T O R - - - -->
