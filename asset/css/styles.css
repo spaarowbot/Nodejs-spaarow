@@ -1,0 +1,229 @@
+body {
+  color: cyan;
+  background-color: black;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: noteworthy;
+  display: inline-block;
+
+}
+
+.video-container {
+  width: 90%;
+  height: 600px;
+  border: none;
+  display: inline-block;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+}
+.hr {
+  width: 90%;
+  color: #00bfff;
+  height: 2px;
+  margin: 20px 0;
+}
+
+.pageButton,
+.navbutton,
+.goonbutton,
+.header-button {
+  background-color: #4CAF50; /* Green color for buttons */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px;
+}
+
+.goonbutton {
+  margin-top: 1.5vw; /* Reduced margin for better spacing */
+}
+
+.seperator {
+  display: none; /* Removed separators for cleaner look */
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.grid-item {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.caption {
+  font-family: noteworthy;
+  font-size: 1rem;
+}
+
+.icon-container {
+  display: inline-block;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.icon {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+#section02,
+#section03,
+#section04,
+#section05,
+#section06 {
+  display: none;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  font-family: Courier New, monospace;
+}
+
+.container {
+  background: none;
+}
+
+.icon img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.nav-container {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: navy;
+}
+
+.footer-container {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+.spacer {
+  height: 20px;
+  background-color: black;
+  color: red;
+  margin-top: 2vw;
+}
+
+.chat-container {
+  display: inline-block;
+  inline-block-direction: column;
+  align-items: center;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  position: fixed;
+  font-family: noteworthy;
+  font-size: 1.2rem;
+  color: red;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 10%;
+  display: inline-block;
+  justify-content: center;
+}
+
+.bot-description {
+  color: white;
+  margin: 10px 0;
+}
+
+.logo-container {
+  width: 100vw;
+  height: 40vw;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+.bot-cards-container {
+  display: inline-block;
+  inline-block-wrap: wrap;
+  gap: 10px;
+}
+
+.bot-card {
+  border: 2px inset deepskyblue;
+  border-radius: 8px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.bot-thumbnail {
+  width: 100%;
+  border-radius: 8px;
+}
+.thumbnail {
+    width: 25%;
+}
+.bot-info {
+  margin-top: 8px;
+}
+
+.bot-description {
+  font-size: 12px;
+  font-family: cursive
+}
+
+.button-girls {
+  width: 100%;
+  padding: 5px;
+  object-fit: fill;
+  border: red inset 1px;
+  background: none;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  padding: 5px;
+}
+
+.grid-item {
+  width: 100%;
+  height: auto;
+  padding: px;
+  box-sizing: border-box;
+}
+
+.page:first-child {
+  display: inline-block;
+}
+.legal-spacer {
+	font-size: 4px;
+	font-family: cursive;
+}
